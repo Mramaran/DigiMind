@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Johnson",
+    "email": "sarah.johnson@digimind.com",
+    "specialty": "Anxiety & Depression",
+    "experience": "8 years",
+    "avatar": "👩‍⚕️",
+    "bio": "Dr. Johnson specializes in cognitive behavioral therapy and has helped hundreds of students overcome anxiety and depression.",
+    "availability": [
+      {
+        "day": "Monday",
+        "slots": ["09:00", "11:00", "14:00", "16:00"]
+      },
+      {
+        "day": "Wednesday",
+        "slots": ["10:00", "13:00", "15:00"]
+      },
+      {
+        "day": "Friday",
+        "slots": ["09:00", "11:00", "14:00"]
+      }
+    ],
+    "rating": 4.9,
+    "totalSessions": 145
+  },
+  {
+    "id": 2,
+    "name": "Dr. Michael Chen",
+    "email": "michael.chen@digimind.com",
+    "specialty": "Stress Management",
+    "experience": "12 years",
+    "avatar": "👨‍⚕️",
+    "bio": "Dr. Chen focuses on mindfulness-based stress reduction and has extensive experience in helping students manage academic pressure.",
+    "availability": [
+      {
+        "day": "Tuesday",
+        "slots": ["08:00", "10:00", "13:00", "15:00"]
+      },
+      {
+        "day": "Thursday",
+        "slots": ["09:00", "11:00", "14:00", "16:00"]
+      },
+      {
+        "day": "Saturday",
+        "slots": ["10:00", "12:00", "14:00"]
+      }
+    ],
+    "rating": 4.8,
+    "totalSessions": 203
+  },
+  {
+    "id": 3,
+    "name": "Dr. Emily Davis",
+    "email": "emily.davis@digimind.com",
+    "specialty": "Student Counseling",
+    "experience": "6 years",
+    "avatar": "👩‍🏫",
+    "bio": "Dr. Davis specializes in academic stress, social anxiety, and transition issues common among students.",
+    "availability": [
+      {
+        "day": "Monday",
+        "slots": ["10:00", "12:00", "15:00"]
+      },
+      {
+        "day": "Tuesday",
+        "slots": ["09:00", "11:00", "14:00", "16:00"]
+      },
+      {
+        "day": "Thursday",
+        "slots": ["08:00", "10:00", "13:00"]
+      }
+    ],
+    "rating": 4.7,
+    "totalSessions": 98
+  },
+  {
+    "id": 4,
+    "name": "Dr. James Wilson",
+    "email": "james.wilson@digimind.com",
+    "specialty": "Crisis Intervention",
+    "experience": "15 years",
+    "avatar": "👨‍💼",
+    "bio": "Dr. Wilson provides emergency support and crisis intervention services, available for urgent mental health needs.",
+    "availability": [
+      {
+        "day": "Daily",
+        "slots": ["Emergency - 24/7"]
+      }
+    ],
+    "rating": 4.9,
+    "totalSessions": 276
+  }
+]

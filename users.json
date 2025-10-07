@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "email": "admin@digimind.com",
+    "password": "admin123",
+    "role": "admin",
+    "name": "Admin User",
+    "joinDate": "2025-09-14T00:00:00.000Z",
+    "streak": 5,
+    "points": 150,
+    "badges": [
+      {
+        "id": "admin-badge",
+        "name": "System Administrator",
+        "description": "Platform administrator with full access",
+        "icon": "👨‍💼"
+      }
+    ],
+    "lastMoodCheck": null
+  },
+  {
+    "id": 2,
+    "email": "student@example.com",
+    "password": "student123",
+    "role": "student",
+    "name": "Jane Smith",
+    "joinDate": "2025-09-10T00:00:00.000Z",
+    "streak": 3,
+    "points": 85,
+    "badges": [
+      {
+        "id": "first-week",
+        "name": "First Week",
+        "description": "Completed first week of activities",
+        "icon": "🌟"
+      }
+    ],
+    "lastMoodCheck": "2025-09-13T08:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "email": "counsellor@example.com",
+    "password": "counsellor123",
+    "role": "counsellor",
+    "name": "Dr. Michael Johnson",
+    "joinDate": "2025-09-01T00:00:00.000Z",
+    "streak": 0,
+    "points": 200,
+    "badges": [
+      {
+        "id": "helper",
+        "name": "Helper",
+        "description": "Dedicated to helping others",
+        "icon": "🤝"
+      }
+    ],
+    "lastMoodCheck": null
+  }
+]

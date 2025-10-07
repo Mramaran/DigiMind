@@ -1,0 +1,188 @@
+{
+  "breathing_exercises": [
+    {
+      "id": 1,
+      "name": "4-7-8 Breathing",
+      "description": "Inhale for 4, hold for 7, exhale for 8",
+      "duration": 240,
+      "difficulty": "beginner",
+      "benefits": ["Reduces anxiety", "Improves sleep", "Calms the mind"]
+    },
+    {
+      "id": 2,
+      "name": "Box Breathing",
+      "description": "Equal count breathing in a square pattern",
+      "duration": 300,
+      "difficulty": "intermediate",
+      "benefits": ["Enhances focus", "Reduces stress", "Improves concentration"]
+    }
+  ],
+  "music_suggestions": [
+    {
+      "id": 1,
+      "title": "Peaceful Piano",
+      "artist": "Calming Sounds",
+      "genre": "Instrumental",
+      "duration": "45:00",
+      "mood": "relaxing",
+      "description": "Gentle piano melodies for deep relaxation"
+    },
+    {
+      "id": 2,
+      "title": "Ocean Waves",
+      "artist": "Nature Sounds",
+      "genre": "Ambient",
+      "duration": "60:00",
+      "mood": "calming",
+      "description": "Natural ocean sounds to wash away stress"
+    },
+    {
+      "id": 3,
+      "title": "Forest Rain",
+      "artist": "Relaxation Music",
+      "genre": "Nature",
+      "duration": "30:00",
+      "mood": "peaceful",
+      "description": "Gentle rainfall in a serene forest setting"
+    },
+    {
+      "id": 4,
+      "title": "Meditation Bell",
+      "artist": "Zen Masters",
+      "genre": "Meditation",
+      "duration": "20:00",
+      "mood": "focused",
+      "description": "Traditional meditation bells for mindfulness practice"
+    },
+    {
+      "id": 5,
+      "title": "Soft Jazz",
+      "artist": "Evening Collective",
+      "genre": "Jazz",
+      "duration": "35:00",
+      "mood": "soothing",
+      "description": "Mellow jazz instrumentals for evening relaxation"
+    },
+    {
+      "id": 6,
+      "title": "Alpine Breeze",
+      "artist": "Mountain Sounds",
+      "genre": "Ambient",
+      "duration": "40:00",
+      "mood": "refreshing",
+      "description": "Cool mountain air and gentle breezes"
+    }
+  ],
+  "journal_prompts": [
+    {
+      "id": 1,
+      "prompt": "What are three things you're grateful for today?",
+      "category": "gratitude",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "prompt": "Describe a challenge you faced recently and how you overcame it.",
+      "category": "growth",
+      "difficulty": "medium"
+    },
+    {
+      "id": 3,
+      "prompt": "What does your ideal day look like? Write it in detail.",
+      "category": "visualization",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "prompt": "How are you feeling right now? Explore these emotions without judgment.",
+      "category": "emotional awareness",
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "prompt": "Write about a person who has positively influenced your life.",
+      "category": "relationships",
+      "difficulty": "easy"
+    }
+  ],
+  "mindfulness_activities": [
+    {
+      "id": 1,
+      "name": "5-4-3-2-1 Grounding",
+      "description": "Notice 5 things you see, 4 you hear, 3 you touch, 2 you smell, 1 you taste",
+      "duration": 300,
+      "category": "grounding",
+      "instructions": [
+        "Find a comfortable position",
+        "Take a deep breath",
+        "Name 5 things you can see",
+        "Name 4 things you can hear",
+        "Name 3 things you can touch",
+        "Name 2 things you can smell",
+        "Name 1 thing you can taste"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Body Scan",
+      "description": "Progressive awareness of body sensations",
+      "duration": 600,
+      "category": "relaxation",
+      "instructions": [
+        "Lie down comfortably",
+        "Close your eyes",
+        "Start at your toes",
+        "Notice sensations without changing them",
+        "Move slowly up your body",
+        "End at the top of your head"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Loving Kindness",
+      "description": "Send positive thoughts to yourself and others",
+      "duration": 480,
+      "category": "compassion",
+      "instructions": [
+        "Sit comfortably",
+        "Start with yourself: 'May I be happy'",
+        "Extend to loved ones",
+        "Include neutral people",
+        "Include difficult people",
+        "End with all beings"
+      ]
+    }
+  ],
+  "wellness_tips": [
+    {
+      "id": 1,
+      "tip": "Take regular breaks from screens to rest your eyes and mind",
+      "category": "digital wellness",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "tip": "Practice deep breathing for 2 minutes when feeling overwhelmed",
+      "category": "stress management",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "tip": "Keep a gratitude journal to focus on positive aspects of life",
+      "category": "mental health",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "tip": "Establish a consistent sleep schedule for better mental clarity",
+      "category": "sleep hygiene",
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "tip": "Connect with nature regularly to reduce stress and improve mood",
+      "category": "natural therapy",
+      "difficulty": "easy"
+    }
+  ]
+}

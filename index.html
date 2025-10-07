@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiMind - Digital Psychological Intervention</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🧠 DigiMind</h1>
+            <nav class="nav" id="mainNav" style="display: none;">
+                <button class="nav-btn" onclick="showSection('dashboard')">🏠 Home</button>
+                <button class="nav-btn" onclick="showSection('assessment')">📋 Assessment</button>
+                <button class="nav-btn" onclick="showSection('wellness')">🌱 Wellness</button>
+                <button class="nav-btn" onclick="showSection('bookings')">📅 Bookings</button>
+                <button class="nav-btn" onclick="showSection('reports')">📊 Reports</button>
+                <button class="nav-btn" id="adminNavBtn" onclick="showSection('admin')" style="display: none;">👨‍💼 Admin</button>
+                <button class="nav-btn logout-btn" onclick="logout()">🚪 Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SOS Floating Button -->
+    <button class="sos-btn" onclick="openSOS()" title="Emergency Help">🆘</button>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Login/Signup Section -->
+        <section id="auth" class="section active">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="auth-form">
+                        <h2 id="authTitle">Welcome to DigiMind 🌟</h2>
+                        <p class="auth-subtitle">Your mental wellness companion</p>
+                        
+                        <form id="authForm">
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" placeholder="Password" required>
+                            </div>
+                            <div class="form-group" id="roleGroup" style="display: none;">
+                                <select id="role" required>
+                                    <option value="">Select Role</option>
+                                    <option value="student">👨‍🎓 Student</option>
+                                    <option value="counsellor">👨‍⚕️ Counsellor</option>
+                                    <option value="admin">👨‍💼 Admin</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="authBtn">Login 🔑</button>
+                        </form>
+                        
+                        <p class="auth-switch">
+                            <span id="authSwitchText">Don't have an account?</span>
+                            <button type="button" class="link-btn" onclick="toggleAuthMode()">Sign Up</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="container">
+                <div class="welcome-banner">
+                    <h2 id="welcomeMessage">Welcome back! 🌈</h2>
+                    <p id="streakCounter">Daily streak: 0 days 🔥</p>
+                </div>
+
+                <!-- Mood Check-in -->
+                <div class="card mood-card">
+                    <h3>How are you feeling today? 😊</h3>
+                    <div class="mood-selector" id="moodSelector">
+                        <button class="mood-btn" onclick="selectMood('happy')" data-mood="happy">😃</button>
+                        <button class="mood-btn" onclick="selectMood('neutral')" data-mood="neutral">😐</button>
+                        <button class="mood-btn" onclick="selectMood('sad')" data-mood="sad">😢</button>
+                        <button class="mood-btn" onclick="selectMood('angry')" data-mood="angry">😡</button>
+                    </div>
+                    <p id="moodStatus"></p>
+                </div>
+
+                <!-- Badges -->
+                <div class="card badges-card">
+                    <h3>Your Achievements 🏆</h3>
+                    <div class="badges-container" id="badgesContainer">
+                        <!-- Badges will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="quick-links">
+                    <button class="quick-link-btn" onclick="showSection('assessment')">
+                        📋 Self-Assessment
+                    </button>
+                    <button class="quick-link-btn" onclick="showSection('wellness')">
+                        🌱 Wellness Hub
+                    </button>
+                    <button class="quick-link-btn" onclick="showSection('bookings')">
+                        📅 Book Session
+                    </button>
+                    <button class="quick-link-btn" onclick="showSection('reports')">
+                        📊 View Reports
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Assessment Section -->
+        <section id="assessment" class="section">
+            <div class="container">
+                <div class="card">
+                    <h2>Stress Level Assessment 📋</h2>
+                    <p>Please answer the following questions honestly to assess your current stress level.</p>
+                    
+                    <form id="assessmentForm">
+                        <div class="question">
+                            <p>1. How often have you felt overwhelmed in the past week?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="q1" value="1"> Never</label>
+                                <label><input type="radio" name="q1" value="2"> Rarely</label>
+                                <label><input type="radio" name="q1" value="3"> Sometimes</label>
+                                <label><input type="radio" name="q1" value="4"> Often</label>
+                                <label><input type="radio" name="q1" value="5"> Always</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>2. How would you rate your sleep quality recently?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="q2" value="1"> Excellent</label>
+                                <label><input type="radio" name="q2" value="2"> Good</label>
+                                <label><input type="radio" name="q2" value="3"> Average</label>
+                                <label><input type="radio" name="q2" value="4"> Poor</label>
+                                <label><input type="radio" name="q2" value="5"> Very Poor</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>3. How often do you feel anxious or worried?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="q3" value="1"> Never</label>
+                                <label><input type="radio" name="q3" value="2"> Rarely</label>
+                                <label><input type="radio" name="q3" value="3"> Sometimes</label>
+                                <label><input type="radio" name="q3" value="4"> Often</label>
+                                <label><input type="radio" name="q3" value="5"> Always</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>4. How difficult is it for you to concentrate on tasks?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="q4" value="1"> Very Easy</label>
+                                <label><input type="radio" name="q4" value="2"> Easy</label>
+                                <label><input type="radio" name="q4" value="3"> Moderate</label>
+                                <label><input type="radio" name="q4" value="4"> Difficult</label>
+                                <label><input type="radio" name="q4" value="5"> Very Difficult</label>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <p>5. How often do you feel irritable or easily frustrated?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="q5" value="1"> Never</label>
+                                <label><input type="radio" name="q5" value="2"> Rarely</label>
+                                <label><input type="radio" name="q5" value="3"> Sometimes</label>
+                                <label><input type="radio" name="q5" value="4"> Often</label>
+                                <label><input type="radio" name="q5" value="5"> Always</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Assessment 📊</button>
+                    </form>
+
+                    <div id="assessmentResult" class="assessment-result" style="display: none;">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness Hub Section -->
+        <section id="wellness" class="section">
+            <div class="container">
+                <h2>Wellness Hub 🌱</h2>
+                
+                <div class="wellness-activities">
+                    <!-- Breathing Exercise -->
+                    <div class="card activity-card">
+                        <h3>Breathing Exercise 🫁</h3>
+                        <p>Take a moment to breathe and relax</p>
+                        <div class="breathing-container">
+                            <div class="breathing-circle" id="breathingCircle">
+                                <span id="breathingText">Click to Start</span>
+                            </div>
+                        </div>
+                        <button id="breathingBtn" class="btn btn-secondary" onclick="startBreathing()">Start 🌬️</button>
+                    </div>
+
+                    <!-- Journaling -->
+                    <div class="card activity-card">
+                        <h3>Daily Journal 📝</h3>
+                        <p>Write down your thoughts and feelings</p>
+                        <textarea id="journalEntry" placeholder="How was your day? What are you grateful for?" rows="6"></textarea>
+                        <button class="btn btn-secondary" onclick="saveJournal()">Save Entry 💾</button>
+                        <div id="journalSaved" class="success-message" style="display: none;">Journal saved! 🎉</div>
+                    </div>
+
+                    <!-- Music Suggestions -->
+                    <div class="card activity-card">
+                        <h3>Calming Music 🎵</h3>
+                        <p>Listen to some relaxing tunes</p>
+                        <div id="musicSuggestions">
+                            <!-- Music suggestions will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Mindfulness Activities -->
+                    <div class="card activity-card">
+                        <h3>Mindfulness Activities 🧘</h3>
+                        <p>Practice mindfulness and grounding exercises</p>
+                        <div id="mindfulnessActivities">
+                            <!-- Mindfulness activities will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Wellness Tips -->
+                    <div class="card activity-card">
+                        <h3>Daily Wellness Tips 💡</h3>
+                        <p>Helpful tips for mental wellness</p>
+                        <div id="wellnessTips">
+                            <!-- Wellness tips will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookings Section -->
+        <section id="bookings" class="section">
+            <div class="container">
+                <h2>Book a Session 📅</h2>
+                
+                <div class="counsellors-grid" id="counsellorsGrid">
+                    <!-- Counsellors will be populated by JavaScript -->
+                </div>
+
+                <div class="my-bookings">
+                    <h3>My Bookings 📋</h3>
+                    <div id="myBookings">
+                        <!-- User's bookings will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="section">
+            <div class="container">
+                <h2>Your Reports 📊</h2>
+                
+                <div class="reports-grid">
+                    <div class="card report-card">
+                        <h3>Mood History 😊</h3>
+                        <div id="moodHistoryChart">
+                            <!-- Mood history chart will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="card report-card">
+                        <h3>Assessment Summary 📋</h3>
+                        <div id="assessmentSummary">
+                            <!-- Assessment summary will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="card report-card">
+                        <h3>Activity Summary 🌱</h3>
+                        <div id="activitySummary">
+                            <!-- Activity summary will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="card report-card">
+                        <h3>Data Export 📄</h3>
+                        <div id="dataExport">
+                            <!-- Data export will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="exportData()">Export Data 📄</button>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin" class="section">
+            <div class="container">
+                <h2>Admin Dashboard 👨‍💼</h2>
+                
+                <div id="userStats" class="admin-section">
+                    <!-- User statistics will be populated by JavaScript -->
+                </div>
+
+                <div id="systemStats" class="admin-section">
+                    <!-- System statistics will be populated by JavaScript -->
+                </div>
+
+                <div id="usageAnalytics" class="admin-section">
+                    <!-- Usage analytics will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SOS Modal -->
+    <div id="sosModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSOS()">&times;</span>
+            <h2>Emergency Support 🆘</h2>
+            
+            <div class="sos-breathing">
+                <h3>Quick Breathing Exercise 🫁</h3>
+                <div class="breathing-circle small" id="sosBreathingCircle">
+                    <span id="sosBreathingText">Take a Deep Breath</span>
+                </div>
+                <button id="sosBreathingBtn" class="btn btn-primary" onclick="startSOSBreathing()">Start Breathing</button>
+                <div class="countdown-timer" id="sosCountdown" style="display: none;">
+                    <p>Session time remaining: <span id="countdownDisplay">5:00</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="countdownProgress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="helplines">
+                <h3>Emergency Helplines 📞</h3>
+                <div class="helpline">
+                    <strong>National Suicide Prevention Lifeline</strong>
+                    <p>988 (USA)</p>
+                </div>
+                <div class="helpline">
+                    <strong>Crisis Text Line</strong>
+                    <p>Text HOME to 741741</p>
+                </div>
+                <div class="helpline">
+                    <strong>International Association for Suicide Prevention</strong>
+                    <p>Visit: iasp.info/resources/Crisis_Centres</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti" class="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
